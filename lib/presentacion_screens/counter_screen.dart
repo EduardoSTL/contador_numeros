@@ -12,6 +12,7 @@ class CounterScreen extends StatelessWidget{
       //Center tiene solo 1 hijo
       child: Column(
         //columna tiene varios hijos:
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('10'),
           Text('Clicks')
