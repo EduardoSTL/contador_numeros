@@ -1,4 +1,4 @@
-import 'package:contador_numeros/presentacion_screens/counter_screen.dart';
+import 'package:contador_numeros/presentacion_screens/counter_functions_screen.dart';
 import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
           colorSchemeSeed: Colors.cyan
           ),
         //home = pantalla inicial
-        home: const CounterScreen(),
+        home: const CounterFunctionsScreen(),
     );
   }
 }

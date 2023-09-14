@@ -29,19 +29,18 @@ class CounterFunctionsScreen extends StatefulWidget{
         children: [
           Text('$clickCounter', style: const TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
           ),
-          Text('Clicks'),
-          //Text('Decrements: $decrementCounter'),
-          Text('Click${clickCounter == 1 ? '':'s'}', style: const TextStyle(fontSize: 25)) // New line
+          Text('Click${clickCounter == 1 ? '':'s'}', style: const TextStyle(fontSize: 25)) 
         ],
       ),
       ),
-      //boton con la accion "sumar"
+      //boton con la accion "sumar", "restar" y "refresar":
       floatingActionButton: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
 
           FloatingActionButton(onPressed: (){
             clickCounter++;
+            //* cambia el estado del texto del widget al hacer click
             setState((){});
           },
           child: const Icon(Icons.plus_one)
@@ -64,6 +63,7 @@ class CounterFunctionsScreen extends StatefulWidget{
         },
         child: const Icon(Icons.refresh_outlined),),
         const SizedBox(height: 10)
+
         ],),
    );
   } 
