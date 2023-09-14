@@ -32,7 +32,6 @@ class CounterScreen extends StatefulWidget{
         children: [
           Text('$clickCounter', style: const TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
           ),
-          Text('Clicks'),
           //Text('Decrements: $decrementCounter'),
           Text('Click${clickCounter == 1 ? '':'s'}', style: const TextStyle(fontSize: 20),) // New line
         ],
@@ -46,7 +45,6 @@ class CounterScreen extends StatefulWidget{
       onPressed: () {
         setState(() {
           --clickCounter;
-          ++decrementCounter;
         });
       },
       child: const Icon(Icons.exposure_minus_1),
