@@ -38,6 +38,10 @@ class CounterScreen extends StatefulWidget{
       //boton con la accion "sumar"
     floatingActionButton: FloatingActionButton(
       onPressed: (){
+        setState(() {
+          //! Incremento en uno cada vez que se presione el botón
+          ++clickCounter;
+        });
       },
       child: const Icon(Icons.plus_one),
       ),
