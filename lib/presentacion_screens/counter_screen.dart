@@ -12,6 +12,7 @@ class CounterScreen extends StatefulWidget{
   //* clase dinamica para widgets dinamicos, hereda de la manera state, que a excepcion de los const, todos son stateful widget
   class _CounterScreenState extends State<CounterScreen> {
     int clickCounter = 0;
+    int decrementCounter = 0;
   //metodo BUILD que define la interfaz del ususario(layout)
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,9 @@ class CounterScreen extends StatefulWidget{
         children: [
           Text('$clickCounter', style: TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
           ),
-          Text('Clicks')
+          Text('Clicks'),
+          Text('Decrements: $decrementCounter'),
+          Text('Click${clickCounter == 1 ? '':'s'}') // New line
         ],
       ),
       ),
