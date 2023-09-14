@@ -30,25 +30,38 @@ class CounterScreen extends StatefulWidget{
         //columna tiene varios hijos y los centra y organiza de forma vertical:
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('$clickCounter', style: TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
+          Text('$clickCounter', style: const TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
           ),
           Text('Clicks'),
-          Text('Decrements: $decrementCounter'),
-          Text('Click${clickCounter == 1 ? '':'s'}') // New line
+          //Text('Decrements: $decrementCounter'),
+          Text('Click${clickCounter == 1 ? '':'s'}', style: const TextStyle(fontSize: 20),) // New line
         ],
       ),
       ),
       //boton con la accion "sumar"
-    floatingActionButton: FloatingActionButton(
-      onPressed: (){
-        //* cambia el estado del texto del widget al hacer click
+    floatingActionButton: Column(
+  mainAxisAlignment: MainAxisAlignment.end,
+  children: [
+    FloatingActionButton(
+      onPressed: () {
         setState(() {
-          //! Incremento en uno cada vez que se presione el botón
+          --clickCounter;
+          ++decrementCounter;
+        });
+      },
+      child: const Icon(Icons.exposure_minus_1),
+    ),
+    const SizedBox(height: 8),
+    FloatingActionButton(
+      onPressed: () {
+        setState(() {
           ++clickCounter;
         });
       },
       child: const Icon(Icons.plus_one),
-      ),
+    ),
+    ],
+    ),
    ); 
   }
 }
