@@ -38,6 +38,7 @@ class CounterScreen extends StatefulWidget{
       //boton con la accion "sumar"
     floatingActionButton: FloatingActionButton(
       onPressed: (){
+        //* cambia el estado del texto del widget al hacer click
         setState(() {
           //! Incremento en uno cada vez que se presione el botón
           ++clickCounter;
