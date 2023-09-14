@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
 //clase que extiende de StatelessWidget
-class CounterScreen extends StatelessWidget{
+class CounterScreen extends StatefulWidget{
+
   const CounterScreen({super.key});
 
+  @override
+  State<CounterScreen> createState() => _CounterScreenState();
+}
+
+  //* clase dinamica para widgets dinamicos, hereda de la manera state, que a excepcion de los const, todos son stateful widget
+  class _CounterScreenState extends State<CounterScreen> {
+    int clickCounter = 0;
   //metodo BUILD que define la interfaz del ususario(layout)
   @override
   Widget build(BuildContext context) {
@@ -20,8 +28,8 @@ class CounterScreen extends StatelessWidget{
       child: Column(
         //columna tiene varios hijos y los centra y organiza de forma vertical:
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Text('10', style: TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
+        children: [
+          Text('$clickCounter', style: TextStyle(fontSize: 169, fontWeight: FontWeight.w100),
           ),
           Text('Clicks')
         ],
@@ -30,7 +38,6 @@ class CounterScreen extends StatelessWidget{
       //boton con la accion "sumar"
     floatingActionButton: FloatingActionButton(
       onPressed: (){
-
       },
       child: const Icon(Icons.plus_one),
       ),
